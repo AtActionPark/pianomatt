@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+}
+
+.piano-container {
+  background-image: url("./assets/img/piano0.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 1000px;
+  height: 90vh;
+  position: relative;
+  margin: auto;
+}
+
+.note {
+  position: absolute;
+  height: 100%;
+}
+#do {
+  left: 40.5%;
+  width: 6%;
+}
+#re {
+  left: 46.5%;
+  width: 6%;
+}
+#mi {
+  left: 52.5%;
+  width: 6.3%;
+}
+#fa {
+  left: 58.8%;
+  width: 6.2%;
+}
+#sol {
+  left: 65.15%;
+  width: 6%;
+}

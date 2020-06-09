@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="./assets/img/piano0.jpg" />
+    <title>Piano</title>
     <script src="./script.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="./assets/img/piano0.jpg" as="image" />
     <link rel="preload" href="./assets/img/pianodo.jpg" as="image" />
     <link rel="preload" href="./assets/img/pianore.jpg" as="image" />
     <link rel="preload" href="./assets/img/pianomi.jpg" as="image" />
@@ -18,12 +20,15 @@
     <link rel="preload" href="./assets/sound/sol.mp3" as="audio" />
   </head>
   <body>
-    <div id="piano-container" class="piano-container">
-      <div id="do" class="note"></div>
-      <div id="re" class="note"></div>
-      <div id="mi" class="note"></div>
-      <div id="fa" class="note"></div>
-      <div id="sol" class="note"></div>
+    <div class="container">
+      <div id="piano-container">
+        <div id="do" class="note"></div>
+        <div id="re" class="note"></div>
+        <div id="mi" class="note"></div>
+        <div id="fa" class="note"></div>
+        <div id="sol" class="note"></div>
+      </div>
+      <div id="piano-container-back"></div>
     </div>
   </body>
 </html>

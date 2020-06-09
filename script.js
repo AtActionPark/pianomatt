@@ -3,6 +3,7 @@ const siteUrl = "https://www.kfc.fr/";
 
 window.onload = function () {
   const background = document.getElementById("piano-container");
+  preload();
 
   const doNote = document.getElementById("do");
   const reNote = document.getElementById("re");
@@ -45,9 +46,17 @@ window.onload = function () {
 
     if (timePressed < MIN_TIME_DOWN) {
       setTimeout(() => {
-        background.style.backgroundImage = "url(assets/img/piano0.jpg)";
+        setBackground();
       }, MIN_TIME_DOWN - timePressed);
-    } else background.style.backgroundImage = "url(assets/img/piano0.jpg)";
+    } else setBackground();
+  }
+
+  function setBackground() {
+    background.style.zIndex = 0;
+    background.style.backgroundImage = "url(assets/img/piano0.jpg)";
+    setTimeout(() => {
+      background.style.zIndex = 10;
+    }, 10);
   }
 
   function onNoteClicked(note) {
@@ -57,7 +66,11 @@ window.onload = function () {
     audio.play();
 
     pressed.push(note);
+    background.style.zIndex = 0;
     background.style.backgroundImage = "url(assets/img/piano" + note + ".jpg)";
+    setTimeout(() => {
+      background.style.zIndex = 10;
+    }, 10);
 
     if (checkIfCorrect()) {
       isCorrect = true;
@@ -94,5 +107,27 @@ window.onload = function () {
         break;
     }
     return file;
+  }
+
+  function preload() {
+    console.log("preload");
+
+    img1 = new Image();
+    img1.src = "./assets/img/piano0.jpg";
+
+    img2 = new Image();
+    img2.src = "./assets/img/pianodo.jpg";
+
+    img3 = new Image();
+    img3.src = "./assets/img/pianore.jpg";
+
+    img4 = new Image();
+    img4.src = "./assets/img/pianomi.jpg";
+
+    img5 = new Image();
+    img5.src = "./assets/img/pianofa.jpg";
+
+    img6 = new Image();
+    img6.src = "./assets/img/pianosol.jpg";
   }
 };

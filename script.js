@@ -110,8 +110,6 @@ window.onload = function () {
   }
 
   function preload() {
-    console.log("preload");
-
     img1 = new Image();
     img1.src = "./assets/img/piano0.jpg";
 
@@ -129,5 +127,21 @@ window.onload = function () {
 
     img6 = new Image();
     img6.src = "./assets/img/pianosol.jpg";
+
+    var audio1 = new Audio("./assets/sound/do.mp3");
+    audio1.volume = 0.00000001;
+    audio1.play();
+    var audio2 = new Audio("./assets/sound/re.mp3");
+    audio2.volume = 0.00000001;
+    audio2.play();
+    var audio3 = new Audio("./assets/sound/mi.mp3");
+    audio3.volume = 0.00000001;
+    audio3.play();
+    var audio4 = new Audio("./assets/sound/fa.mp3");
+    audio4.volume = 0.00000001;
+    audio4.play();
+    var audio5 = new Audio("./assets/sound/sol.mp3");
+    audio5.volume = 0.00000001;
+    audio5.play();
   }
 };

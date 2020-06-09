@@ -109,6 +109,19 @@ window.onload = function () {
     return file;
   }
 
+  function preloadSound(src) {
+    var sound = document.createElement("audio");
+    if ("src" in sound) {
+      sound.autoPlay = false;
+    } else {
+      sound = document.createElement("bgsound");
+      sound.volume = -10000;
+    }
+    sound.src = src;
+    document.body.appendChild(sound);
+    return sound;
+  }
+
   function preload() {
     img1 = new Image();
     img1.src = "./assets/img/piano0.jpg";
@@ -128,20 +141,10 @@ window.onload = function () {
     img6 = new Image();
     img6.src = "./assets/img/pianosol.jpg";
 
-    var audio1 = new Audio("./assets/sound/do.mp3");
-    audio1.volume = 0.00000001;
-    audio1.play();
-    var audio2 = new Audio("./assets/sound/re.mp3");
-    audio2.volume = 0.00000001;
-    audio2.play();
-    var audio3 = new Audio("./assets/sound/mi.mp3");
-    audio3.volume = 0.00000001;
-    audio3.play();
-    var audio4 = new Audio("./assets/sound/fa.mp3");
-    audio4.volume = 0.00000001;
-    audio4.play();
-    var audio5 = new Audio("./assets/sound/sol.mp3");
-    audio5.volume = 0.00000001;
-    audio5.play();
+    preloadSound("./assets/sound/do.mp3");
+    preloadSound("./assets/sound/re.mp3");
+    preloadSound("./assets/sound/mi.mp3");
+    preloadSound("./assets/sound/fa.mp3");
+    preloadSound("./assets/sound/sol.mp3");
   }
 };
